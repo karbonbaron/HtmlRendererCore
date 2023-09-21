@@ -1,4 +1,4 @@
-using PdfSharpCore.Drawing;
+using PdfSharp.Drawing;
 using System;
 using HtmlRendererCore.Adapters;
 using HtmlRendererCore.Adapters.Entities;

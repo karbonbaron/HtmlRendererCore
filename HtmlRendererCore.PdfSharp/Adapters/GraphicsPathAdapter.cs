@@ -1,7 +1,7 @@
 ﻿using System;
 using HtmlRendererCore.Adapters;
 using HtmlRendererCore.Adapters.Entities;
-using PdfSharpCore.Drawing;
+using PdfSharp.Drawing;
 
 namespace HtmlRendererCore.PdfSharp.Adapters
 {

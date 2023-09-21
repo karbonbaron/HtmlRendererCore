@@ -1,5 +1,4 @@
-using PdfSharpCore.Drawing;
-using System.Drawing;
+using PdfSharp.Drawing;
 using HtmlRendererCore.Adapters.Entities;
 
 namespace HtmlRendererCore.PdfSharp.Utilities
@@ -75,14 +74,5 @@ namespace HtmlRendererCore.PdfSharp.Utilities
         {
             return XColor.FromArgb(c.A, c.R, c.G, c.B);
         }
-
-        /// <summary>
-        /// Convert from  color to WinForms color.
-        /// </summary>
-        public static RColor Convert(Color c)
-        {
-            return RColor.FromArgb(c.A, c.R, c.G, c.B);
-        }
-
     }
 }

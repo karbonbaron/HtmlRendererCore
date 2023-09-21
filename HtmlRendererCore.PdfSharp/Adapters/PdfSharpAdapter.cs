@@ -1,7 +1,6 @@
-﻿using PdfSharpCore.Drawing;
-using PdfSharpCore.Pdf;
-using System.Drawing;
-using System.Drawing.Text;
+﻿using System;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using System.IO;
 using HtmlRendererCore.Adapters;
 using HtmlRendererCore.Adapters.Entities;
@@ -32,12 +31,12 @@ namespace HtmlRendererCore.PdfSharp.Adapters
             AddFontFamilyMapping("monospace", "Courier New");
             AddFontFamilyMapping("Helvetica", "Arial");
 
-            var families = new InstalledFontCollection();
-
-            foreach (var family in families.Families)
-            {
-                AddFontFamily(new FontFamilyAdapter(new XFontFamily(family.Name)));
-            }
+            // var families = new InstalledFontCollection();
+            //
+            // foreach (var family in families.Families)
+            // {
+            //     AddFontFamily(new FontFamilyAdapter(new XFontFamily(family.Name)));
+            // }
         }
 
         /// <summary>
@@ -52,8 +51,13 @@ namespace HtmlRendererCore.PdfSharp.Adapters
         {
             try
             {
-                var color = Color.FromKnownColor((KnownColor)System.Enum.Parse(typeof(KnownColor), colorName, true));
-                return Utils.Convert(color);
+                if (Enum.TryParse(colorName, ignoreCase: true, out XKnownColor color))
+                {
+                    var xColor = XColor.FromKnownColor(color);
+                    return RColor.FromArgb((int)xColor.A * 255, xColor.R, xColor.G, xColor.B);
+                }
+
+                return RColor.Empty;
             }
             catch
             {
@@ -102,19 +106,19 @@ namespace HtmlRendererCore.PdfSharp.Adapters
 
         protected override RImage ImageFromStreamInt(Stream memoryStream)
         {
-            return new ImageAdapter(XImage.FromStream(() => memoryStream));
+            return new ImageAdapter(XImage.FromStream(memoryStream));
         }
 
         protected override RFont CreateFontInt(string family, double size, RFontStyle style)
         {
-            var fontStyle = (XFontStyle)((int)style);
+            var fontStyle = Enum.Parse<XFontStyleEx>(style.ToString(), ignoreCase: true);
             var xFont = new XFont(family, size, fontStyle, new XPdfFontOptions(PdfFontEncoding.Unicode));
             return new FontAdapter(xFont);
         }
 
         protected override RFont CreateFontInt(RFontFamily family, double size, RFontStyle style)
         {
-            var fontStyle = (XFontStyle)((int)style);
+            var fontStyle = Enum.Parse<XFontStyleEx>(style.ToString(), ignoreCase: true);
             var xFont = new XFont(((FontFamilyAdapter)family).FontFamily.Name, size, fontStyle, new XPdfFontOptions(PdfFontEncoding.Unicode));
             return new FontAdapter(xFont);
         }

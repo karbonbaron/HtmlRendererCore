@@ -1,5 +1,5 @@
 ﻿using HtmlRendererCore.Adapters;
-using PdfSharpCore.Drawing;
+using PdfSharp.Drawing;
 
 namespace HtmlRendererCore.PdfSharp.Adapters
 {

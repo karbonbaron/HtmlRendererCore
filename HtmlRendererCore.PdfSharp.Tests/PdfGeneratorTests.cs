@@ -1,6 +1,7 @@
 using FluentAssertions;
 using System;
 using System.IO;
+using PdfSharp;
 using Xunit;
 
 namespace HtmlRendererCore.PdfSharp.Tests
@@ -21,10 +22,12 @@ namespace HtmlRendererCore.PdfSharp.Tests
             ";
 
             // Act
-            var result = PdfGenerator.GeneratePdf(html, PdfSharpCore.PageSize.A4);
+            var result = PdfGenerator.GeneratePdf(html, PageSize.A4);
 
             // Assert
             result.Should().NotBeNull();
+            
+            result.Save("file.pdf");
         }
 
         [Fact]
@@ -44,7 +47,7 @@ namespace HtmlRendererCore.PdfSharp.Tests
 
             using (var stream = new MemoryStream())
             {
-                var pdf = PdfGenerator.GeneratePdf(html, PdfSharpCore.PageSize.A4);
+                var pdf = PdfGenerator.GeneratePdf(html, PageSize.A4);
 
                 pdf.Save(stream);
 

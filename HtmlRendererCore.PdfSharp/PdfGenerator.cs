@@ -1,6 +1,6 @@
-﻿using PdfSharpCore;
-using PdfSharpCore.Drawing;
-using PdfSharpCore.Pdf;
+﻿using PdfSharp;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using System;
 using HtmlRendererCore.Core;
 using HtmlRendererCore.Core.Entities;

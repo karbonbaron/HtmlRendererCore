@@ -1,14 +1,16 @@
 # HtmlRendererCore
+
 [![NuGet version (HtmlRendererCore.PdfSharp)](https://img.shields.io/nuget/v/HtmlRendererCore.PdfSharp.svg?style=flat-square)](https://www.nuget.org/packages/HtmlRendererCore.PdfSharp/)
 ![Build](https://github.com/j-petty/HtmlRendererCore/workflows/Build/badge.svg?branch=master)
 
-**HtmlRendererCore** is a partial port of [HtmlRenderer](https://github.com/ArthurHub/HTML-Renderer) for .NET Core.
+**HtmlRendererCore** is a partial port of [HtmlRendererCore](https://github.com/j-petty/HtmlRendererCore) for .NET 6+.
+Previous versions of this library used `System.Drawing` which was deprecated for linux systems in .Net 6, and completely remove in .Net 7.
 
-This library offers Html to Pdf parsing for .Net Core projects using [PdfSharpCore](https://github.com/ststeiger/PdfSharpCore).
+This library offers Html to Pdf parsing for .Net Core projects using [PdfSharpCore](https://github.com/ststeiger/PdfSharpCore). We are currently using a preview version of this lib, as other older version did not support .Net 7 as well.
 
 Future updates will be focused at cleaning up the codebase and offering support for more advanced HTML rendering. Public pull requests welcome.
 
-## Example usage 
+## Example usage
 
 ### Generate PDF from HTML
 
@@ -31,15 +33,12 @@ using (var stream = new MemoryStream())
 }
 ```
 
-## Documentation
+## Attribution
 
-**HtmlRenderer:** https://archive.codeplex.com/?p=htmlrenderer
-
-**PdfSharpCore:** https://github.com/ststeiger/PdfSharpCore
-
+**HtmlRendererCore:** https://github.com/j-petty/HtmlRendererCore
+**PdfSharp:** https://github.com/empira/PDFsharp/
 
 ## License
-
 
 Copyright (c) 2021 James Petty
 

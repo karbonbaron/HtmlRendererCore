@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6</TargetFramework>
     <Authors>James Petty</Authors>
     <Product>HtmlRendererCore</Product>
     <Copyright />
@@ -24,8 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="PdfSharpCore" Version="1.2.11" />
-    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+    <PackageReference Include="PDFsharp" Version="6.0.0-preview-3" />
   </ItemGroup>
 
 </Project>

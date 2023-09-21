@@ -1,6 +1,6 @@
 ﻿// "Therefore those skilled at the unorthodox
-using PdfSharpCore;
-using PdfSharpCore.Drawing;
+using PdfSharp;
+using PdfSharp.Drawing;
 
 namespace HtmlRendererCore.PdfSharp
 {
