@@ -3,14 +3,14 @@
   <PropertyGroup>
     <TargetFramework>net7</TargetFramework>
     <Authors>James Petty</Authors>
-    <Product>HtmlRendererCore</Product>
+    <Product>HtmlRendererCore-Net7</Product>
     <Copyright />
     <PackageLicenseFile></PackageLicenseFile>
     <PackageProjectUrl>https://github.com/manuel3108/HtmlRendererCore-Net7</PackageProjectUrl>
     <RepositoryUrl>https://github.com/manuel3108/HtmlRendererCore-Net7</RepositoryUrl>
     <Description>HtmlRendererCore-Net7 is a partial port of HtmlRenderer for .NET Core.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.2</Version>
+    <Version>2.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
