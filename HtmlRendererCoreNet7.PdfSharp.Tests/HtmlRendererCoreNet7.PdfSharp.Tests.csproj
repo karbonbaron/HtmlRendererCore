@@ -4,6 +4,8 @@
     <TargetFramework>net7</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>HtmlRendererCore.PdfSharp.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HtmlRendererCore.PdfSharp\HtmlRendererCore.PdfSharp.csproj" />
+    <ProjectReference Include="..\HtmlRendererCoreNet7.PdfSharp\HtmlRendererCoreNet7.PdfSharp.csproj" />
   </ItemGroup>
 
 </Project>

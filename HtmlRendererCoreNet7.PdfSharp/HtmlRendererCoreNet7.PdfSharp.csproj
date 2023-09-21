@@ -11,6 +11,7 @@
     <Description>HtmlRendererCore-Net7 is a partial port of HtmlRenderer for .NET Core.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>2.0.3</Version>
+    <RootNamespace>HtmlRendererCore.PdfSharp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

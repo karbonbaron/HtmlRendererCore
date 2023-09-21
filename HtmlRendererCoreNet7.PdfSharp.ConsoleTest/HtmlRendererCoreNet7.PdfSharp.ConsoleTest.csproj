@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\HtmlRendererCore.PdfSharp\HtmlRendererCore.PdfSharp.csproj" />
+      <ProjectReference Include="..\HtmlRendererCoreNet7.PdfSharp\HtmlRendererCoreNet7.PdfSharp.csproj" />
     </ItemGroup>
 
 </Project>
