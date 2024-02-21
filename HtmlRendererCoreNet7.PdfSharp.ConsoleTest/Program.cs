@@ -1,22 +1,108 @@
-﻿using HtmlRendererCore.PdfSharp;
+﻿using System.Drawing;
+using System.Net;
+using System.Numerics;
+using System.Text;
+using HtmlRendererCore.Adapters;
+using HtmlRendererCore.PdfSharp;
 using PdfSharp;
+using PdfSharp.Drawing;
 using PdfSharp.Fonts;
+using PdfSharp.Pdf;
 using PdfSharp.Snippets.Font;
+using QRCoder;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.ColorSpaces;
+using SixLabors.ImageSharp.ColorSpaces.Conversion;
+using SixLabors.ImageSharp.Formats.Jpeg;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing;
+using Color = SixLabors.ImageSharp.Color;
 
 GlobalFontSettings.FontResolver = new FailsafeFontResolver();
 
 var html = @"
-                <html>
-                    <body>
-                        <p style=""color: red"">Test document</p>
-                        <p style=""color: blue; font-style: italic"">Test document</p>
-                        <p style=""color: black;""><strong>Test document</strong></p>
-                        <p style=""color: black"">Test document</p>
-                        <p style=""color: black"">Test document</p>
+                <html style=""padding: 0; margin: 0; "">
+                    <body style=""padding: 0; margin: 0;"">
+                        <span style=""font-family: test123"">test123</span>
                     </body>
                 </html>
             ";
 
-var result = PdfGenerator.GeneratePdf(html, PageSize.A4);
+var document = new PdfDocument();
+document.Options.ColorMode = PdfColorMode.Cmyk;
 
-result.Save("file.pdf");
+PdfGenerator.AddFontFamilyMapping("test123", "test123");
+PdfGenerator.AddFontFamily("test123");
+PdfGenerator.AddPdfPages(document, html, PageSize.A4, 0);
+
+document.Save("file.pdf");
+
+
+// var generator = new PayloadGenerator.ContactData(PayloadGenerator.ContactData.ContactOutputType.VCard3, "John", "Doe");
+// string payload = generator.ToString();
+
+// QRCodeGenerator qrGenerator = new QRCodeGenerator();
+// QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+// var qrCode = new Base64QRCode(qrCodeData);
+// var qrCodeImage = qrCode.GetGraphic(20, Color.Black, Color.White, true, Base64QRCode.ImageType.Jpeg);
+
+// var image = Image.Load(qrCodeImage);
+// image.Save("test2.bmp");
+// Bitmap bmp;
+// using (var ms = new MemoryStream(imageData))
+// {
+//     bmp = new Bitmap(ms);
+// }
+
+// File.WriteAllBytes("test.bmp", qrCodeImage);
+// await qrCodeImage.SaveAsJpegAsync("qrcode_cmyk.jpeg", new JpegEncoder() { ColorType = JpegColorType.Cmyk, Quality = 100 });
+
+
+// await castedQrCodeImage.SaveAsJpegAsync("qrcode_cmyk2.jpeg", new JpegEncoder() { ColorType = JpegColorType.Cmyk, Quality = 100 });
+
+// var document = new PdfDocument();
+// document.Options.ColorMode = PdfColorMode.Cmyk;
+//
+// PdfGenerator.AddPdfPages(document, html, PageSize.A4, 0);
+//
+// document.Save("file.pdf");
+
+
+
+
+//
+// var castedQrCodeImage = (Image<Rgba32>)qrCodeImage;
+//
+// var convert = new ColorSpaceConverter();
+// castedQrCodeImage.ProcessPixelRows(accessor =>
+// {
+//     // Color is pixel-agnostic, but it's implicitly convertible to the Rgba32 pixel type
+//     Rgba32 transparent = Color.Blue;
+//
+//     for (int y = 0; y < accessor.Height; y++)
+//     {
+//         Span<Rgba32> pixelRow = accessor.GetRowSpan(y);
+//         Span<Cmyk> pixelRowCmyk = new Span<Cmyk>();
+//
+//         foreach (ref Rgba32 pixel in pixelRow)
+//         {
+//             var cymk = convert.ToCmyk(pixel);
+//             pixel = transparent;
+//         }
+//     }
+// });
+//
+// var sourceImage = castedQrCodeImage;
+//
+// Image<Rgba32> targetImage = new(sourceImage.Width, sourceImage.Height);
+// int height = sourceImage.Height;
+// sourceImage.ProcessPixelRows(targetImage, (sourceAccessor, targetAccessor) =>
+// {
+//     for (int i = 0; i < height; i++)
+//     {
+//         Span<Rgba32> sourceRow = sourceAccessor.GetRowSpan(i);
+//         Span<Rgba32> targetRow = targetAccessor.GetRowSpan(i);
+//
+//         sourceRow.Slice(sourceArea.X, sourceArea.Width).CopyTo(targetRow);
+//     }
+// }

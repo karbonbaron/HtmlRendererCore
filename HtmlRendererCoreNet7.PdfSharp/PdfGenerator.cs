@@ -2,6 +2,7 @@
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System;
+using HtmlRendererCore.Adapters;
 using HtmlRendererCore.Core;
 using HtmlRendererCore.Core.Entities;
 using HtmlRendererCore.Core.Utils;
@@ -27,6 +28,11 @@ namespace HtmlRendererCore.PdfSharp
             ArgChecker.AssertArgNotNullOrEmpty(toFamily, "toFamily");
 
             PdfSharpAdapter.Instance.AddFontFamilyMapping(fromFamily, toFamily);
+        }
+        
+        public static void AddFontFamily(string fontFamilyName)
+        {
+            PdfSharpAdapter.Instance.AddFontFamily(new FontFamilyAdapter (new XFontFamily(fontFamilyName)));
         }
 
         /// <summary>
