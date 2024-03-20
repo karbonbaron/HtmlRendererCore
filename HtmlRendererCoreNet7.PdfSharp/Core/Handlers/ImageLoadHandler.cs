@@ -229,7 +229,7 @@ namespace HtmlRendererCore.Core.Handlers
                 if (imagePartsCount > 0)
                 {
                     byte[] imageData = base64PartsCount > 0 ? Convert.FromBase64String(s[1].Trim()) : new UTF8Encoding().GetBytes(Uri.UnescapeDataString(s[1].Trim()));
-                    return _htmlContainer.Adapter.ImageFromStream(new MemoryStream(imageData));
+                    return _htmlContainer.Adapter.ImageFromStream(new MemoryStream(imageData, 0, imageData.Length, true, true));
                 }
             }
             return null;

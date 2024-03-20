@@ -33,6 +33,11 @@ using (var stream = new MemoryStream())
 }
 ```
 
+## Publishing
+- `dotnet build -c Release`
+- `dotnet pack -c Release ./HtmlRendererCoreNet7.PdfSharp/HtmlRendererCoreNet7.PdfSharp.csproj -o .`
+- `dotnet publish`
+
 ## Attribution
 
 **HtmlRendererCore:** https://github.com/j-petty/HtmlRendererCore

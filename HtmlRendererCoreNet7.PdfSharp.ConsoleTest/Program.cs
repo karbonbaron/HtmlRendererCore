@@ -21,9 +21,12 @@ using Color = SixLabors.ImageSharp.Color;
 GlobalFontSettings.FontResolver = new FailsafeFontResolver();
 
 var html = @"
-                <html style=""padding: 0; margin: 0; "">
-                    <body style=""padding: 0; margin: 0;"">
-                        <span style=""font-family: test123"">test123</span>
+                <html >
+                    <body style=""font-size: 50px; line-height: 10px"">
+                        <div>test123</div>
+                        <div style=""position: absolute; margin-top: -40px;"">tTest12</div>
+                        <img src=""data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4
+  //8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="" alt=""Red dot"" />
                     </body>
                 </html>
             ";
