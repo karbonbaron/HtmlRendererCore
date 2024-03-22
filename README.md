@@ -37,6 +37,8 @@ using (var stream = new MemoryStream())
 - `dotnet build -c Release`
 - `dotnet pack -c Release ./HtmlRendererCoreNet7.PdfSharp/HtmlRendererCoreNet7.PdfSharp.csproj -o .`
 - `dotnet publish`
+- `dotnet nuget push "HtmlRendererCoreNet7.PdfSharp.2.0.7.nupkg" -k ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+  `
 
 ## Attribution
 
