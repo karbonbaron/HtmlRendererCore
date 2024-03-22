@@ -10,7 +10,7 @@
     <RepositoryUrl>https://github.com/manuel3108/HtmlRendererCore-Net7</RepositoryUrl>
     <Description>HtmlRendererCore-Net7 is a partial port of HtmlRenderer for .NET Core.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.8</Version>
+    <Version>2.0.9</Version>
     <RootNamespace>HtmlRendererCore.PdfSharp</RootNamespace>
   </PropertyGroup>
 
