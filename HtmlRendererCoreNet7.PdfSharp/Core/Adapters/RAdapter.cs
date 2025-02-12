@@ -212,6 +212,7 @@ namespace HtmlRendererCore.Adapters
         /// </summary>
         public RImage GetLoadingFailedImage()
         {
+            string[] names = typeof(HtmlRendererUtils).Assembly.GetManifestResourceNames();
             if (_errorImage == null)
             {
                 var stream = typeof(HtmlRendererUtils).Assembly.GetManifestResourceStream("HtmlRendererCore.Core.Utils.ImageError.png");

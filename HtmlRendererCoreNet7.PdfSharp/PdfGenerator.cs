@@ -7,6 +7,8 @@ using HtmlRendererCore.Core;
 using HtmlRendererCore.Core.Entities;
 using HtmlRendererCore.Core.Utils;
 using HtmlRendererCore.PdfSharp.Adapters;
+using PdfSharp.Fonts;
+using PdfSharp.Snippets.Font;
 
 namespace HtmlRendererCore.PdfSharp
 {
@@ -78,6 +80,10 @@ namespace HtmlRendererCore.PdfSharp
         /// <returns>the generated image of the html</returns>
         public static PdfDocument GeneratePdf(string html, PdfGenerateConfig config, CssData cssData = null, EventHandler<HtmlStylesheetLoadEventArgs> stylesheetLoad = null, EventHandler<HtmlImageLoadEventArgs> imageLoad = null)
         {
+            // failsave font resolver for core build
+            if (Capabilities.Build.IsCoreBuild && GlobalFontSettings.FontResolver == null)
+                GlobalFontSettings.FontResolver = new FailsafeFontResolver();
+
             // create PDF document to render the HTML into
             var document = new PdfDocument();
 

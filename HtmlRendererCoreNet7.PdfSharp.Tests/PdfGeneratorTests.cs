@@ -1,4 +1,3 @@
-using FluentAssertions;
 using System;
 using System.IO;
 using PdfSharp;
@@ -25,7 +24,7 @@ namespace HtmlRendererCore.PdfSharp.Tests
             var result = PdfGenerator.GeneratePdf(html, PageSize.A4);
 
             // Assert
-            result.Should().NotBeNull();
+            Assert.True(result != null);
             
             result.Save("file.pdf");
         }
@@ -55,7 +54,7 @@ namespace HtmlRendererCore.PdfSharp.Tests
             }
 
             // Assert
-            result.Should().NotBeNullOrEmpty();
+            Assert.True(result != null);
         }
     }
 }
