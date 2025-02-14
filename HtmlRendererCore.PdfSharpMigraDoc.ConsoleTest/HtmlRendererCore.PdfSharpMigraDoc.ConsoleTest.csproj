@@ -9,11 +9,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\HtmlRendererCoreNet7.PdfSharp\HtmlRendererCoreNet7.PdfSharp.csproj" />
+      <PackageReference Include="QRCoder-ImageSharp" Version="0.10.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="QRCoder-ImageSharp" Version="0.10.0" />
+      <ProjectReference Include="..\HtmlRendererCore.PdfSharpMigraDoc\HtmlRendererCore.PdfSharpMigraDoc.csproj" />
     </ItemGroup>
 
 </Project>

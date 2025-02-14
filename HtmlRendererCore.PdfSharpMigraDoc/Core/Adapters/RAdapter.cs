@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using HtmlRendererCore.Adapters.Entities;
 using HtmlRendererCore.Core;
 using HtmlRendererCore.Core.Entities;
@@ -212,7 +213,6 @@ namespace HtmlRendererCore.Adapters
         /// </summary>
         public RImage GetLoadingFailedImage()
         {
-            string[] names = typeof(HtmlRendererUtils).Assembly.GetManifestResourceNames();
             if (_errorImage == null)
             {
                 var stream = typeof(HtmlRendererUtils).Assembly.GetManifestResourceStream("HtmlRendererCore.Core.Utils.ImageError.png");

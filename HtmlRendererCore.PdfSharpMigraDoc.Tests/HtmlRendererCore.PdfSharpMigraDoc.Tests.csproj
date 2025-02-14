@@ -22,7 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HtmlRendererCoreNet7.PdfSharp\HtmlRendererCoreNet7.PdfSharp.csproj" />
+    <ProjectReference Include="..\HtmlRendererCore.PdfSharpMigraDoc\HtmlRendererCore.PdfSharpMigraDoc.csproj" />
+    <ProjectReference Include="..\HtmlRendererCoreNet7.PdfSharp\HtmlRendererCore.PdfSharpMigraDoc.csproj" />
   </ItemGroup>
 
 </Project>

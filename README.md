@@ -1,10 +1,12 @@
 # HtmlRendererCore
 
-[![NuGet version (HtmlRendererCore.PdfSharp)](https://img.shields.io/nuget/v/HtmlRendererCore.PdfSharp.svg?style=flat-square)](https://www.nuget.org/packages/HtmlRendererCore.PdfSharp/)
-![Build](https://github.com/j-petty/HtmlRendererCore/workflows/Build/badge.svg?branch=master)
+[![NuGet version (HtmlRendererCore.PdfSharpMigraDoc)](https://img.shields.io/nuget/v/HtmlRendererCore.PdfSharpMigraDoc.svg?style=flat-square)](https://www.nuget.org/packages/HtmlRendererCore.PdfSharpMigraDoc/)
+![Build](https://github.com/karbonbaron/HtmlRendererCore/workflows/Build/badge.svg?branch=master)
 
-**HtmlRendererCore** is a partial port of [HtmlRendererCore](https://github.com/j-petty/HtmlRendererCore) for .NET 6+.
+**HtmlRendererCore** is a partial port of [HtmlRendererCore](https://github.com/j-petty/HtmlRendererCore) for .NET 6+ by https://github.com/manuel3108/HtmlRendererCore-Net7
 Previous versions of this library used `System.Drawing` which was deprecated for linux systems in .Net 6, and completely remove in .Net 7.
+
+This package does library updates to latest and targets .NET 8 and uses PdfSharpMigraDoc package instead of PdfSharp
 
 This library offers Html to Pdf parsing for .Net Core projects using [PdfSharpCore](https://github.com/ststeiger/PdfSharpCore). We are currently using a preview version of this lib, as other older version did not support .Net 7 as well.
 
@@ -35,14 +37,15 @@ using (var stream = new MemoryStream())
 
 ## Publishing
 - `dotnet build -c Release`
-- `dotnet pack -c Release ./HtmlRendererCoreNet7.PdfSharp/HtmlRendererCoreNet7.PdfSharp.csproj -o .`
+- `dotnet pack -c Release ./HtmlRendererCore.PdfSharpMigraDoc/HtmlRendererCore.PdfSharpMigraDoc.csproj -o .`
 - `dotnet publish`
-- `dotnet nuget push "HtmlRendererCoreNet7.PdfSharp.2.0.7.nupkg" -k ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+- `dotnet nuget push "HtmlRendererCore.PdfSharpMigraDoc.2.0.12.nupkg" -k ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
   `
 
 ## Attribution
 
 **HtmlRendererCore:** https://github.com/j-petty/HtmlRendererCore
+**HtmlRendererCore port to .NET 7:** https://github.com/manuel3108/HtmlRendererCore-Net7
 **PdfSharp:** https://github.com/empira/PDFsharp/
 
 ## License

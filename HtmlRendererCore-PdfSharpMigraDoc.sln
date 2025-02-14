@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlRendererCoreNet7.PdfSharp", "HtmlRendererCoreNet7.PdfSharp\HtmlRendererCoreNet7.PdfSharp.csproj", "{CA16111D-A954-4B64-9F30-B918C6942733}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlRendererCore.PdfSharpMigraDoc", "HtmlRendererCore.PdfSharpMigraDoc\HtmlRendererCore.PdfSharpMigraDoc.csproj", "{CA16111D-A954-4B64-9F30-B918C6942733}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{70EF907B-FC9E-48B5-BACB-14F01CBF236A}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,9 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlRendererCoreNet7.PdfSharp.Tests", "HtmlRendererCoreNet7.PdfSharp.Tests\HtmlRendererCoreNet7.PdfSharp.Tests.csproj", "{A14BEB51-47FA-46F6-A8B4-01555C2B5BBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlRendererCore.PdfSharpMigraDoc.Tests", "HtmlRendererCore.PdfSharpMigraDoc.Tests\HtmlRendererCore.PdfSharpMigraDoc.Tests.csproj", "{A14BEB51-47FA-46F6-A8B4-01555C2B5BBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlRendererCoreNet7.PdfSharp.ConsoleTest", "HtmlRendererCoreNet7.PdfSharp.ConsoleTest\HtmlRendererCoreNet7.PdfSharp.ConsoleTest.csproj", "{997B75A7-C38A-4879-AD78-28A626914EB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlRendererCore.PdfSharpMigraDoc.ConsoleTest", "HtmlRendererCore.PdfSharpMigraDoc.ConsoleTest\HtmlRendererCore.PdfSharpMigraDoc.ConsoleTest.csproj", "{997B75A7-C38A-4879-AD78-28A626914EB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
