@@ -8,7 +8,7 @@ Previous versions of this library used `System.Drawing` which was deprecated for
 
 This package does library updates to latest and targets .NET 8 and uses PdfSharpMigraDoc package instead of PdfSharp
 
-This library offers Html to Pdf parsing for .Net Core projects using [PdfSharpCore](https://github.com/ststeiger/PdfSharpCore). We are currently using a preview version of this lib, as other older version did not support .Net 7 as well.
+This library offers Html to Pdf parsing for .Net Core projects using [PdfSharpCore](https://github.com/ststeiger/PdfSharpCore).
 
 Future updates will be focused at cleaning up the codebase and offering support for more advanced HTML rendering. Public pull requests welcome.
 
